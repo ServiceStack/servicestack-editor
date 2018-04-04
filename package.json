@@ -1,7 +1,7 @@
 {
   "name": "@servicestack/editor",
   "title": "ServiceStack Markdown Editor",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Markdown Editor for Vuetify",
   "homepage": "https://github.com/ServiceStack/servicestack-editor",
   "license": "BSD-3-Clause",
