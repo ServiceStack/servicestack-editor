@@ -2,7 +2,7 @@
 
 ServiceStack Markdown Editor is a developer-friendly Markdown Editor for Vuetify Apps which is optimized [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) where it supports popular short-cuts for editing and documenting code like tab block un/indenting, single-line and code and comments blocks.
 
-![](https://i.imgur.com/J9jRuvQ.png)
+![](https://i.imgur.com/YPlfplv.png)
 
 ## Live Demo
 
