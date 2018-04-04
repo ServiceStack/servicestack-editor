@@ -75,20 +75,22 @@ Annotations were added to the implementation below to describe how the component
     <v-form v-model="valid" ref="form" lazy-validation>
         <v-card>
             <v-card-text>
-                <v-alert outline color="error" icon="warning" :value="errorMessage()">{{ errorMessage() }}</v-alert>                  
+                <v-alert outline color="error" icon="warning" :value="errorMessage()">
+                    {{ errorMessage() }}
+                </v-alert>
 
-                    <Editor ref="editor"
-                        label="Comment"
-                        v-model="content"
-                        :rows="6"
-                        :counter="1000"
-                        :rules="[ v => !v || v.length <= 1000 || 'Max 1000 characters' ]"
-                        :error-messages="errorResponse('content')"
-                        :lang="csharp"
-                        :autofocus="true"
-                        @save="submit"
-                        @close="reset()"
-                    />
+                <Editor ref="editor"
+                    label="Comment"
+                    v-model="content"
+                    :rows="6"
+                    :counter="1000"
+                    :rules="[ v => !v || v.length <= 1000 || 'Max 1000 characters' ]"
+                    :error-messages="errorResponse('content')"
+                    :lang="csharp"
+                    :autofocus="true"
+                    @save="submit"
+                    @close="reset()"
+                />
 
             </v-card-text>
             <v-card-actions>
@@ -136,7 +138,7 @@ export default {
                 try {
                     this.$store.commit('loading', true);  // indicate to the App that an API request is pending
                     
-                    // If component was initialized with an existing `comment` update it, otherwise create a new one
+                    // If component was initialized with an existing `comment` update it, otherwise create anew
                     const response = this.comment != null
                         ? await updatePostComment(this.comment.id, this.post.id, this.content)
                         : await createPostComment(this.postId, this.content, this.replyId);
@@ -147,7 +149,7 @@ export default {
                     this.valid = false;                          // mark this form as invalid
                     this.responseStatus = e.responseStatus || e; // populate the server error response
                 } finally {
-                    this.$store.commit('loading', false); // indicate to the App that the API request has completed
+                    this.$store.commit('loading', false); // indicate to the App that the API request is done
                 }
             }
         },
